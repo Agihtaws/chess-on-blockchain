@@ -1,0 +1,65 @@
+/* components/ChessRules.css */
+.chess-rules {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-color);
+  overflow-y: auto;
+  height: calc(100vh - 150px);
+}
+
+.chess-rules h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.rule-section {
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rule-section h3 {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+}
+
+.rule-section ul {
+  padding-left: 20px;
+}
+
+.rule-section li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.rule-section li strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.rule-section li ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .chess-rules {
+    padding: 15px;
+  }
+  
+  .chess-rules h2 {
+    font-size: 1.5rem;
+  }
+  
+  .rule-section {
+    padding: 10px 15px;
+  }
+}

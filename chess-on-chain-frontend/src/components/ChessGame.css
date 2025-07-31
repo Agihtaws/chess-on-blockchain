@@ -1,0 +1,577 @@
+/* ChessGame.css */
+.chess-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+/* Game start container */
+.game-start-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  transform: perspective(1000px) rotateX(2deg);
+  border-top: 6px solid #4a6fa5;
+}
+
+.difficulty-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.difficulty-selection h3 {
+  margin-bottom: 25px;
+  color: #4a6fa5;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.difficulty-options button {
+  padding: 15px;
+  border: 2px solid #4a6fa5;
+  border-radius: 8px;
+  background-color: white;
+  color: #4a6fa5;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-options button:hover {
+  background-color: #e7eef8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #2c3e50;
+}
+
+.difficulty-options button.selected {
+  background-color: #4a6fa5;
+  color: white;
+  border-color: #2c3e50;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.start-game-btn {
+  background: linear-gradient(to right, #4a6fa5, #3498db);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  width: 80%;
+  max-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.start-game-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #3a5a85, #2980b9);
+}
+
+.start-game-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Game layout with side controls */
+.game-layout {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+  align-items: flex-start;
+  max-height: calc(100vh - 200px);
+}
+
+.game-board-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.game-status {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a6fa5;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-controls-sidebar {
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn {
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.control-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn:disabled {
+  background-color: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.new-game-btn {
+  background: linear-gradient(to right, #4a6fa5, #3498db);
+  color: white;
+}
+
+.resign-btn {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+}
+
+.draw-btn {
+  background: linear-gradient(to right, #f39c12, #e67e22);
+  color: white;
+}
+
+/* Chess Board */
+.chess-board-wrapper {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chess-board {
+  border: 8px solid #654321;
+  border-radius: 4px;
+  width: 400px;
+  height: 415px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateX(3deg);
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden; /* Add this to prevent content from spilling outside */
+}
+
+
+.chess-board::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.board-row {
+  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+.board-square {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.board-square:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.dark {
+  background-color: #b58863;
+}
+
+.light {
+  background-color: #f0d9b5;
+}
+
+.selected {
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 0, 0.7);
+}
+
+.possible-move {
+  position: relative;
+}
+
+.possible-move::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.chess-piece {
+  font-size: 38px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.chess-piece:hover {
+  transform: scale(1.2);
+}
+
+/* White pieces */
+.chess-piece.k, .chess-piece.q, .chess-piece.r, .chess-piece.b, .chess-piece.n, .chess-piece.p {
+  color: #000;
+}
+
+/* Black pieces */
+.chess-piece.K, .chess-piece.Q, .chess-piece.R, .chess-piece.B, .chess-piece.N, .chess-piece.P {
+  color: #fff;
+}
+
+/* Timer container - positioned on sides */
+.timer-container {
+  position: absolute;
+  width: 100%;
+  bottom: -45px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.timer {
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 90px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.ai-timer {
+  color: white;
+  background-color: #e74c3c;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.player-timer {
+  color: white;
+  background-color: #2ecc71;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  min-width: 250px;
+  text-align: center;
+}
+
+.notification.success {
+  background-color: #2ecc71;
+}
+
+.notification.error {
+  background-color: #e74c3c;
+}
+
+.notification.info {
+  background-color: #3498db;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Game over modal */
+.game-over-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  min-width: 300px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.game-over-modal h2 {
+  margin-bottom: 15px;
+  color: #4a6fa5;
+}
+
+.game-over-modal p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.game-over-modal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-over-modal button:hover {
+  background-color: #3a5a85;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .game-board-container {
+    order: 2;
+  }
+  
+  .game-controls-sidebar {
+    order: 1;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .control-btn {
+    width: 32%;
+    padding: 8px;
+  }
+  
+  .chess-board {
+    width: 320px;
+    height: 335px;
+  }
+  
+  .board-row {
+    height: 40px;
+  }
+  
+  .board-square {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .chess-piece {
+    font-size: 30px;
+  }
+
+  .timer-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .timer {
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 70px;
+    text-align: center;
+    font-size: 12px;
+    pointer-events: auto;
+  }
+  
+  .ai-timer {
+    color: white;
+    background-color: #e74c3c;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 35px;
+  }
+  
+  .player-timer {
+    color: white;
+    background-color: #2ecc71;
+    transform: translateX(50%);
+    position: absolute;
+    right: 35px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .chess-board {
+    width: 280px;
+    height: 295px;
+    border-width: 6px;
+  }
+  
+  .board-row {
+    height: 35px;
+  }
+  
+  .board-square {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .chess-piece {
+    font-size: 26px;
+  }
+  
+  .difficulty-options button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .start-game-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .notification {
+    min-width: auto;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
+}
+/* Add to ChessGame.css */
+.processing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.processing-message {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

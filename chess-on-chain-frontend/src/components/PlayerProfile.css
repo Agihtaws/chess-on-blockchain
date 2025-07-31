@@ -1,0 +1,149 @@
+/* PlayerProfile.css */
+.player-profile {
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling in profile */
+}
+
+.player-profile h2 {
+  margin-bottom: 30px;
+  color: #4a6fa5;
+  text-align: center;
+}
+
+.performance-section {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-top: 4px solid #4a6fa5;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a6fa5;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.performance-chart {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  display: block; /* Ensure it's displayed */
+  width: 100%;
+}
+
+.performance-chart h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.chart-bar {
+  height: 30px;
+  background-color: #eee;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.bar-segment {
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+.bar-segment.win {
+  background-color: #2ecc71;
+}
+
+.bar-segment.draw {
+  background-color: #f39c12;
+}
+
+.bar-segment.loss {
+  background-color: #e74c3c;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.legend-color.win {
+  background-color: #2ecc71;
+}
+
+.legend-color.draw {
+  background-color: #f39c12;
+}
+
+.legend-color.loss {
+  background-color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add this to ensure it's visible */
+@media (max-width: 768px) {
+  .player-profile {
+    padding: 15px;
+    overflow-y: auto;
+  }
+  
+  .performance-chart {
+    margin-top: 30px;
+    padding: 15px;
+  }
+}

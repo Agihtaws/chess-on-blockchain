@@ -1,0 +1,334 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #1d54a6;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #2ecc71;
+  --warning-color: #1d54a6;
+  --info-color: #3498db;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: var(--dark-color);
+  height: 100vh;
+  position: relative;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(74, 111, 165, 0.2);
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+}
+
+.account-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet-info span {
+  background-color: var(--light-color);
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  border-left: 4px solid var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.disconnect-btn {
+  background-color: var(--accent-color);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.disconnect-btn:hover {
+  background-color: #c0392b;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Simple Message */
+.simple-message {
+  text-align: center;
+  margin: 50px auto;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Registration Prompt */
+.registration-prompt {
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  max-width: 500px;
+  margin: 20px auto;
+  border-top: 6px solid var(--primary-color);
+  transform: perspective(1000px) rotateX(2deg);
+  flex: 1;
+}
+
+.registration-prompt h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.registration-prompt p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.registration-prompt button {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+/* Main Content */
+.main-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 15px 30px var(--shadow-color);
+  overflow: hidden;
+  transform: perspective(1000px) rotateX(1deg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background-color: var(--secondary-color);
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.tabs button {
+  background-color: transparent;
+  color: var(--light-color);
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tabs button:hover::after {
+  transform: scaleX(0.5);
+}
+
+.tabs button.active {
+  color: white;
+  font-weight: 600;
+}
+
+.tabs button.active::after {
+  transform: scaleX(1);
+}
+
+/* Game Section */
+.game-section {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Game status styling */
+.game-status {
+  font-size: 16px !important;
+  padding: 8px 12px !important;
+  margin: 10px auto !important;
+  max-width: 90% !important;
+  text-align: center !important;
+  background-color: var(--light-color) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  color: var(--secondary-color) !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Loading */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(74, 111, 165, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  position: absolute;
+  margin-top: 60px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .account-controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .wallet-info span {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  
+  .disconnect-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .app {
+    padding: 5px;
+  }
+  
+  header {
+    padding: 5px 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Fix for game history */
+.game-history {
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding: 10px;
+}

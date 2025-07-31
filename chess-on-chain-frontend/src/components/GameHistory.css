@@ -1,0 +1,175 @@
+/* GameHistory.css */
+.game-history {
+  height: auto;
+  min-height: 300px;
+  max-height: calc(100vh - 200px);
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.game-history h2 {
+  margin-bottom: 20px;
+  color: #4a6fa5;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: auto;
+}
+
+.game-history table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.game-history th {
+  background-color: #4a6fa5;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.game-history td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.game-history tr:last-child td {
+  border-bottom: none;
+}
+
+.game-history tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.game-history tr:hover {
+  background-color: #f1f4f7;
+}
+
+.result-win td:nth-child(3) {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.result-loss td:nth-child(3) {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.result-draw td:nth-child(3) {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #666;
+  font-style: italic;
+}
+
+.loading-spinner:after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(74, 111, 165, 0.3);
+  border-radius: 50%;
+  border-top-color: #4a6fa5;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+.empty-history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #666;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-history table {
+    font-size: 0.85rem;
+  }
+  
+  .game-history th,
+  .game-history td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-history table {
+    font-size: 0.75rem;
+  }
+  
+  .game-history th,
+  .game-history td {
+    padding: 6px;
+  }
+  
+  .game-history {
+    padding: 10px;
+  }
+  
+  .game-history h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Column widths */
+.game-history th:nth-child(1),
+.game-history td:nth-child(1) {
+  width: 30%;
+}
+
+.game-history th:nth-child(2),
+.game-history td:nth-child(2) {
+  width: 20%;
+}
+
+.game-history th:nth-child(3),
+.game-history td:nth-child(3) {
+  width: 20%;
+}
+
+.game-history th:nth-child(4),
+.game-history td:nth-child(4) {
+  width: 30%;
+}
