@@ -101,6 +101,7 @@ SOMNIA_TESTNET_URL=https://rpc.ankr.com/somnia_testnet
 
 4. Compile and deploy the contract:
 ```
+npx hardhat clean
 npx hardhat compile
 npx hardhat run scripts/deploy.js --network somnia_testnet
 ```
