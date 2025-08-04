@@ -171,7 +171,7 @@ The chess game smart contract is deployed on the Somnia Testnet at address:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache License - see the LICENSE file for details.
 
 ## 👥 Contributors
 
