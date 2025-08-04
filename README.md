@@ -1,6 +1,6 @@
 # Chess on Blockchain
 
-![Chess on Blockchain Demo](placeholder-image.jpg)
+![Chess on Blockchain Demo](chess-on-chain-frontend/public/images.jpg)
 
 A decentralized chess game built on the blockchain that allows players to compete, track their progress, and earn ratings in a transparent and immutable way.
 
