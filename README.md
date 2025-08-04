@@ -6,6 +6,11 @@ A decentralized chess game built on the blockchain that allows players to compet
 
 ## 🎮 [Live Demo](https://chess-on-blockchain.vercel.app/)
 
+## 🎥 Demo Video ⭐
+
+[![Watch the video](https://img.youtube.com/vi/AX4a0HeUvWY/0.jpg)](https://www.youtube.com/watch?v=AX4a0HeUvWY)
+
+
 ## ✨ Features
 
 - **Blockchain Integration**: Game results permanently recorded on the Somnia Testnet
