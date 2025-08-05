@@ -8,7 +8,7 @@ A decentralized chess game built on the blockchain that allows players to compet
 
 ## 🎥 Demo Video ⭐
 
-[![Watch the video](https://img.youtube.com/vi/AX4a0HeUvWY/0.jpg)](https://www.youtube.com/watch?v=AX4a0HeUvWY)
+[![Watch the video](https://img.youtube.com/vi/xhVU1DT6rJQ/0.jpg)](https://www.youtube.com/watch?v=xhVU1DT6rJQ)
 
 
 ## ✨ Features
